@@ -4,7 +4,7 @@ import React, { Component } from 'react'
     render() {
         return (
             <div className="cardWrapper">
-            <div className="playerCard">
+            <div className="playerCard" data-testid='playerCard'>
             <h2>{this.props.name}</h2>
             <p>Country: {this.props.country}</p>
             <p>Searches: {this.props.searches}</p>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import PlayerCard from './components/PlayerCard'
+import NavBar from './components/NavBar'
 
 class App extends Component {
   constructor() {
@@ -26,25 +27,31 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log("mounted");
+    // console.log("mounted");
     this.fetchPlayer();
   }
 
   render() {
   return (
-    <div className="App">
-      <h1 className="playerHeader">Women's World Cup players</h1>
+    <header className="App-header">
 
-      {this.state.players.map(player => {
-              return (
-                <PlayerCard
-                  name={player.name}
-                  country={player.country}
-                  searches={player.searches}
-                />
-              );
-            })}
-    </div>
+    <NavBar />
+      <div className="row"  data-testid='playerCards'>
+
+        <h1 className="playerHeader">Women's World Cup players</h1>
+      
+        {this.state.players.map(player => {
+          return (
+            <PlayerCard
+              name={player.name}
+              country={player.country}
+              searches={player.searches}
+            />
+          );
+        })}
+        
+      </div>
+    </header>
   );
 }
 }

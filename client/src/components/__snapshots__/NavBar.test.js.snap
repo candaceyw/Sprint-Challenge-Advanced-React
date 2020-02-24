@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar snapshot renders 1`] = `
+<div
+  className="dark-mode"
+>
+  <nav>
+    <div
+      className="toggle-container"
+    >
+      <span
+        style={
+          Object {
+            "color": "grey",
+          }
+        }
+      >
+        ☀︎
+      </span>
+      <span
+        className="toggle"
+        data-testid="toggle"
+      >
+        <input
+          checked={true}
+          className="checkbox"
+          data-testid="checkbox"
+          id="checkbox"
+          onChange={[Function]}
+          type="checkbox"
+          value={true}
+        />
+        <label
+          htmlFor="checkbox"
+        />
+      </span>
+      <span
+        style={
+          Object {
+            "color": "slateblue",
+          }
+        }
+      >
+        ☾
+      </span>
+    </div>
+  </nav>
+</div>
+`;
