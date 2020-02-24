@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerCard snapshot renders 1`] = `
+<div
+  className="cardWrapper"
+>
+  <div
+    className="playerCard"
+    data-testid="playerCard"
+  >
+    <h2 />
+    <p>
+      Country: 
+    </p>
+    <p>
+      Searches: 
+    </p>
+  </div>
+</div>
+`;
