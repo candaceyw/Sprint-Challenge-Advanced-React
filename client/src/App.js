@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import PlayerCard from './components/PlayerCard'
 
-function App() {
+class App extends Component {
+  constructor() {
+    super();
+    this.state ={
+        players: [],
+    }
+  }
+
+
+  fetchPlayer = () => {
+    fetch("http://localhost:5000/api/players")
+      .then(res => {
+        return res.json();
+      })
+      .then(results => {
+        this.setState({ players: results });
+        console.log(results);
+      })
+      .catch(error => {
+        console.log("No players to show", error);
+      });
+  };
+
+  componentDidMount() {
+    console.log("mounted");
+    this.fetchPlayer();
+  }
+
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="playerHeader">Women's World Cup players</h1>
+
+      {this.state.players.map(player => {
+              return (
+                <PlayerCard
+                  name={player.name}
+                  country={player.country}
+                  searches={player.searches}
+                />
+              );
+            })}
     </div>
   );
 }
-
+}
 export default App;
